@@ -4951,7 +4951,7 @@ const I18N_HU = {
 "Pri zápise z databázy je IČO povinné.": "Adatbázisból történő rögzítésnél az adószám kötelező.",
 "Zadaj ho a daj Načítať — overí sa tým, že ide naozaj o túto firmu.": "Add meg, és kattints a Betöltés gombra — így ellenőrizzük, hogy valóban erről a cégről van szó.",
 "Tohto klienta ešte nepoznáme — zadaj IČO.": "Ezt az ügyfelet még nem ismerjük — add meg az adószámot.",
-"Nájdeš ho na webe firmy, vo faktúre alebo na finstat.sk.": "Megtalálod a cég honlapján, a számlán vagy a finstat.sk oldalon.",
+"Nájdeš ho na webe firmy, vo faktúre alebo na finstat.sk.": "Megtalálod a cég honlapján, a számlán vagy az e-cegjegyzek.hu oldalon.",
 "Bez IČO sa záznam uložiť nedá.": "Adószám nélkül a bejegyzés nem menthető.",
 "IČO ešte nie je overené.": "Az adószám még nincs ellenőrizve.",
 "— musí sa objaviť zelená ✓ s názvom firmy. Tým sa uistíme, že číslo patrí naozaj tejto firme.": "— meg kell jelennie a zöld ✓ jelnek a cég nevével. Így biztosak lehetünk benne, hogy a szám valóban ehhez a céghez tartozik.",
@@ -5241,7 +5241,11 @@ const I18N_HU = {
 "Najprv zadaj svoj e-mail.": "Előbb add meg az e-mail-címedet.",
 "Poslali sme ti e-mail s odkazom na nové heslo. Pozri aj priečinok so spamom.": "Elküldtük az e-mailt az új jelszó beállításához. Nézd meg a levélszemét mappát is.",
 "Nesprávny e-mail alebo heslo. Skús znova alebo si nastav nové heslo cez „Zabudnuté heslo?“.": "Hibás e-mail-cím vagy jelszó. Próbáld újra, vagy kérj új jelszót az „Elfelejtett jelszó?” linkkel.",
-"Príliš veľa pokusov. Počkaj chvíľu a skús to znova.": "Túl sok próbálkozás. Várj egy kicsit, és próbáld újra."
+"Príliš veľa pokusov. Počkaj chvíľu a skús to znova.": "Túl sok próbálkozás. Várj egy kicsit, és próbáld újra.",
+"dnes": "ma",
+"zajtra": "holnap",
+"Dnes": "Ma",
+"Zajtra": "Holnap"
 };
 const LANGS = { sk:"SK", hu:"HU" };
 const LANG_KEY = "drescher.lang";
@@ -7219,6 +7223,17 @@ function renderLeadModal(){
       openModal(null, leadService(l));
       setTimeout(()=>{
         $("#fClient").value=l.company;
+        /* Adószám berieme priamo z firmy v databáze — obchodník ho nemusí
+           opisovať. Zobrazí sa zamknutý ako overený, Zmeniť ho odomkne. */
+        if(l.ico && icoKey(l.ico)){
+          $("#fIco").value=l.ico;
+          $("#fIco").style.borderColor="";
+          $("#fIcoLocked").style.display="";
+          $("#fIcoRow").style.display="none";
+          $("#fIcoLockedNum").textContent=String(l.ico).trim();
+          $("#fIcoLockedName").textContent=l.company ? "· "+l.company : "";
+          $("#fIcoHint").innerHTML="IČO je overené a uložené. Meniť ho treba len vtedy, keď ide o inú firmu.";
+        }
         $("#fEvents").value="";
         // názov databázy patrí do "Oslovenie — info", nie do popisu aktivity
         const dbn=leadDbName(l);
@@ -9392,6 +9407,21 @@ function buildStatic(){
     nb.innerHTML=`${nbIcon(17)}<span class="ss-name">New business</span><span class="ss-ct" data-ssct="newbusiness">0</span>`;
     nb.onclick=()=>{ closeSegSheet(); state.view="newbusiness"; state.activeClient=null; render(); };
     segSheetList.appendChild(nb);
+  }
+  {
+    /* Na mobile nie je bočné menu ani tlačidlo Postreh v lište — postrehy a návod sú tu. */
+    const fb=el("button","seg-sheet-row");
+    fb.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;flex:0 0 auto"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="ss-name">Postrehy</span><span class="ss-ct" data-ssct="feedback">0</span>`;
+    fb.onclick=()=>{ closeSegSheet(); state.view="feedback"; state.activeClient=null; render(); window.scrollTo(0,0); };
+    segSheetList.appendChild(fb);
+    const send=el("button","seg-sheet-row");
+    send.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;flex:0 0 auto"><path d="M12 5v14M5 12h14"/></svg><span class="ss-name">Postreh, podnet, návrh</span>`;
+    send.onclick=()=>{ closeSegSheet(); $("#railFb")?.click(); };
+    segSheetList.appendChild(send);
+    const help=el("button","seg-sheet-row");
+    help.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;flex:0 0 auto"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .8c0 1.7-2.5 2.2-2.5 3.7"/><path d="M12 17h.01"/></svg><span class="ss-name">Návod</span>`;
+    help.onclick=()=>{ closeSegSheet(); state.view="help"; state.activeClient=null; render(); window.scrollTo(0,0); };
+    segSheetList.appendChild(help);
   }
   $("#segSheetClose").onclick=closeSegSheet;
   $("#segScrim").onclick=e=>{ if(e.target===$("#segScrim")) closeSegSheet(); };
@@ -15062,6 +15092,7 @@ async function improveTextWithAI(){
 
 let editing=null;
 function openModal(entry,presetSeg){
+  try{ backend.ensureLeads?.(); }catch(err){ console.error(err); }
   if(entry && !canEdit(entry)){ toast("Nemáš oprávnenie upraviť tento záznam."); return; }
   editing=entry;
   $("#modalTitle").textContent=entry?"Upraviť záznam":"Nový záznam";
@@ -15211,7 +15242,10 @@ function openModal(entry,presetSeg){
       .sort((a,b)=>a.localeCompare(b,LOC));
     dl.innerHTML=[...vlastne, ...ostatne].map(m=>`<option value="${esc(m)}">`).join("");
   }
-  $("#fClient").oninput=()=>{ syncIcoField(); fillZakazkaList($("#fClient").value); };   // len počas písania, nie po vyhľadaní
+  $("#fClient").oninput=()=>{ syncIcoField(); fillZakazkaList($("#fClient").value); };
+  /* Výber z ponuky alebo odchod z poľa — databázy už mohli medzičasom doraziť. */
+  $("#fClient").onchange=()=>syncIcoField();
+  $("#fClient").onblur=()=>{ if(!$("#fIco").value) syncIcoField(); };   // len počas písania, nie po vyhľadaní
   pendingFinstat = entry?.companyInfo || null;
   // úloha s termínom — vždy prázdna, pridáva sa k práve ukladanému záznamu
   $("#taskInputWrap").style.display="none";
