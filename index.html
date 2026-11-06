@@ -5548,10 +5548,19 @@ function setLang(l, {reload=true}={}){
   try{ localStorage.setItem(LANG_KEY, l); }catch(e){}
   if(reload && l!==LANG) location.reload();
 }
-/* Po prihlásení: ak si používateľ jazyk ešte nevybral, nastaví sa podľa neho. */
+/* Po prihlásení: jazyk zvolený na tomto zariadení má prednosť. Uložený jazyk
+   v profile (users/{uid}.lang) a predvolený jazyk podľa e-mailu sa použijú len
+   vtedy, keď si ho tu používateľ ešte nevybral. Predtým mal prednosť profil —
+   a keďže zápis voľby do profilu nestihol prebehnúť pred obnovením stránky,
+   po prepnutí na SK sa appka hneď vrátila do HU. */
 function applyUserLang(user){
   let saved=null; try{ saved=localStorage.getItem(LANG_KEY); }catch(e){}
-  const want = user?.lang || (!saved && USER_LANG_DEFAULT[(user?.key||"").toLowerCase()]) || null;
+  if(saved && LANGS[saved]){
+    // profil zosúladíme s voľbou na zariadení, nech platí aj inde
+    if(user?.lang && user.lang!==saved) setTimeout(()=>{ try{ backend?.saveUserPref?.({lang:saved}); }catch(e){} }, 0);
+    return false;
+  }
+  const want = user?.lang || USER_LANG_DEFAULT[(user?.key||"").toLowerCase()] || null;
   if(want && want!==LANG){ setLang(want); return true; }
   return false;
 }
@@ -5738,7 +5747,13 @@ function startI18n(){
   if(LANG==="hu") document.querySelectorAll("[data-hu]").forEach(e=>{ e.textContent=e.dataset.hu; });
   document.querySelectorAll(".lang-sw button").forEach(b=>{
     b.classList.toggle("on", b.dataset.lang===LANG);
-    b.onclick=()=>{ setLang(b.dataset.lang); try{ backend?.saveUserPref?.({lang:b.dataset.lang}); }catch(e){} };
+    b.onclick=async()=>{
+      const l=b.dataset.lang;
+      if(l===LANG) return;
+      // najprv uložiť voľbu do profilu (najviac 1,5 s), až potom obnoviť stránku
+      try{ await Promise.race([ Promise.resolve(backend?.saveUserPref?.({lang:l})), new Promise(r=>setTimeout(r,1500)) ]); }catch(e){}
+      setLang(l);
+    };
   });
   document.documentElement.lang = LANG;
   if(LANG!=="hu") return;
