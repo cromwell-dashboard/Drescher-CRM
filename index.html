@@ -3036,6 +3036,113 @@ body:has(#loginView:not(.hidden)) .bottom-nav, body:has(#loginView:not(.hidden))
 .rp-sw{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer}
 .rp-adm{display:flex;flex-direction:column;gap:10px;align-items:flex-start;margin-top:6px}
 @media (max-width:760px){ .rp-exp{margin-left:0} .rp-f select{min-width:0} }
+/* ===== Kontakty ===== */
+.kt-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 16px}
+.kt-q{flex:1 1 280px;display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.kt-q svg{width:16px;height:16px;color:var(--muted);flex:0 0 auto}
+.kt-q input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-size:14px;color:var(--ink)}
+.kt-q:focus-within{border-color:var(--ink)}
+.kt-bar select{height:40px;border:1px solid var(--line);border-radius:10px;padding:0 10px;font:inherit;font-size:13.5px;background:#fff;color:var(--ink)}
+.kt-sw{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);cursor:pointer}
+.kt-grid{display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:1000px){ .kt-grid{grid-template-columns:1fr} }
+.kt-list{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.kt-firm-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:11px 14px 6px;background:#F6F7F8;border-top:1px solid var(--line)}
+.kt-firm:first-child .kt-firm-h{border-top:0}
+.kt-firm-h b{font-family:"Archivo",system-ui,sans-serif;font-size:14px;font-weight:700}
+.kt-firm-h span{font-size:12px;color:var(--muted)}
+.kt-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;padding:9px 14px;border:0;border-top:1px solid var(--line-2);background:#fff;text-align:left;font:inherit;cursor:pointer;color:var(--ink)}
+.kt-row:hover{background:#FAFBFC}
+.kt-row.on{background:#000;color:#fff}
+.kt-row.on .kt-av{background:#fff;color:#000}
+.kt-row.on .kt-rn span,.kt-row.on .kt-rr{color:#D5D8DD}
+.kt-row.arch{opacity:.6}
+.kt-av{width:34px;height:34px;border-radius:50%;background:#EEF0F2;color:var(--ink);display:grid;place-items:center;font-weight:700;font-size:12px;flex:0 0 auto}
+.kt-av.big{width:60px;height:60px;font-size:20px;background:#000;color:#fff;font-family:"Archivo",system-ui,sans-serif;font-weight:800}
+.kt-rn{display:flex;flex-direction:column;min-width:0;line-height:1.3}
+.kt-rn b{font-size:13.5px;font-weight:600}
+.kt-rn span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kt-rr{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.kt-foot{padding:10px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.kt-empty{padding:34px 18px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6;background:#fff;border:1.5px dashed var(--line);border-radius:14px}
+.kt-list .kt-empty{border:0;border-radius:0}
+.kt-empty b{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}
+.kt-det{display:flex;flex-direction:column;gap:14px;min-width:0;scroll-margin-top:80px}
+.kt-card,.kt-hist{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.kt-top{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.kt-id{flex:1 1 240px;min-width:0}
+.kt-id h2{margin:0;font-family:"Archivo",system-ui,sans-serif;font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.kt-id p{margin:4px 0 0;color:var(--ink-soft);font-size:14px}
+.kt-firm-link{border:0;background:none;padding:0;font:inherit;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.kt-firm-link:hover{color:#CC2229}
+.kt-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.kt-chip{font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:#F1F2F4;color:var(--ink-soft)}
+.kt-chip.dark{background:#000;color:#fff}
+.kt-chip.warn{background:#FFF1D6;color:#7A4300}
+.kt-dl{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line-2);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 20px}
+.kt-dl dt{font-size:11.5px;color:var(--muted)}
+.kt-dl dd{margin:0;font-size:13.5px;font-weight:600;overflow-wrap:anywhere}
+.kt-dl a{color:var(--ink)}
+.kt-note{margin:12px 0 0;padding:10px 12px;border-radius:10px;background:#F6F7F8;font-size:13px;color:var(--ink-soft);white-space:pre-line}
+.kt-src{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+.kt-hist-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.kt-hist-h h2{margin:0;font-family:"Archivo",system-ui,sans-serif;font-size:17px;font-weight:700}
+.kt-hint{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+.kt-tl{list-style:none;margin:0;padding:0}
+.kt-ti{display:grid;grid-template-columns:118px 18px minmax(0,1fr);gap:0 10px}
+.kt-td{padding:11px 0;font-size:12px;font-weight:600;color:var(--ink-soft);text-align:right;font-variant-numeric:tabular-nums}
+.kt-tdot{position:relative}
+.kt-tdot::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--line)}
+.kt-tdot::after{content:"";position:absolute;left:3px;top:15px;width:12px;height:12px;border-radius:50%;background:#62666E;border:2px solid #fff;box-shadow:0 0 0 1px #62666E}
+.kt-ti.t-u .kt-tdot::after{background:#1F6B40;box-shadow:0 0 0 1px #1F6B40}
+.kt-ti.t-d .kt-tdot::after{background:#1E4FA8;box-shadow:0 0 0 1px #1E4FA8}
+.kt-ti.t-m .kt-tdot::after{background:#C46A06;box-shadow:0 0 0 1px #C46A06}
+.kt-tc{display:flex;flex-direction:column;gap:3px;padding:8px 10px;margin:2px 0;border-radius:10px}
+.kt-ti.t-m .kt-tc{background:#FFF9EC}
+.kt-topen{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border:0;background:none;padding:0;font:inherit;text-align:left;cursor:pointer;color:var(--ink)}
+.kt-topen b{font-size:13.5px;font-weight:600}
+.kt-topen:hover b{color:#CC2229}
+.kt-tk{font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;background:#F1F2F4;color:#3A3D43}
+.t-u .kt-tk{background:#EAF5EE;color:#1F6B40}
+.t-d .kt-tk{background:#E8EEFA;color:#1E4FA8}
+.t-m .kt-tk{background:#FFF1D6;color:#7A4300}
+.kt-tt{font-size:13px;color:var(--ink-soft);line-height:1.5}
+.kt-tt mark{background:#FFEFB8;color:inherit;padding:0 1px;border-radius:3px}
+.kt-tm{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.kt-assign{border:1px solid #E7C98F;background:#fff;border-radius:8px;padding:3px 9px;font:600 12px/1.4 inherit;color:#7A4300;cursor:pointer}
+.kt-assign:hover{background:#FFF1D6}
+@media (max-width:600px){ .kt-ti{grid-template-columns:64px 14px minmax(0,1fr)} .kt-td{font-size:11px} .kt-tdot::before{left:6px} .kt-tdot::after{left:1px} }
+/* Ľudia vo firme */
+.kt-firm-box .section-title .kt-add{margin-left:auto;padding:6px 12px;font-size:12.5px}
+.kt-lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;align-items:start;margin-bottom:6px}
+.kt-lane{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.kt-lane.l-rozhoduje{background:#141518;border-color:#141518}
+.kt-lane.l-rozhoduje .kt-lane-h,.kt-lane.l-rozhoduje p{color:#fff}
+.kt-lane.l-arch{background:#F6F7F8}
+.kt-lane.l-arch .kt-pc{opacity:.7}
+.kt-lane-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.kt-lane-h b{font-family:"Archivo",system-ui,sans-serif;font-size:15px;font-weight:700}
+.kt-lane-h span{font-size:12px;font-weight:600}
+.kt-lane p{margin:0;font-size:12px;color:var(--ink-soft)}
+.kt-pc{display:flex;flex-direction:column;gap:5px;width:100%;padding:10px 12px;border-radius:11px;border:1px solid var(--line);background:#fff;text-align:left;font:inherit;cursor:pointer;color:var(--ink)}
+.kt-pc:hover{border-color:var(--ink)}
+.kt-pc-top{display:flex;gap:9px;align-items:center;min-width:0}
+.kt-pc-c{font-size:12px;color:var(--ink-soft);overflow-wrap:anywhere}
+.kt-pc-tag{align-self:flex-start;font-size:11px;font-weight:600;padding:1px 8px;border-radius:999px;background:#F1F2F4;color:var(--ink-soft)}
+/* okno kontaktu */
+.kt-f3{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(0,1fr);gap:10px}
+.kt-f2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:560px){ .kt-f3{grid-template-columns:70px minmax(0,1fr)} .kt-f3 .field:last-child{grid-column:1/-1} .kt-f2{grid-template-columns:1fr} }
+.kt-roles{border:0;padding:0;margin:0 0 14px}
+.kt-roles legend{font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;padding:0}
+.kt-roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:560px){ .kt-roles{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.kt-roles label{display:flex;align-items:center;justify-content:center;gap:6px;height:38px;border:1px solid var(--line);border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;color:var(--ink)}
+.kt-roles label:has(input:checked){border:2px solid #000}
+.kt-roles input{accent-color:#000;margin:0}
+.kt-checks{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:10px;background:#F6F7F8;margin-bottom:10px}
+.kt-dup{display:none;padding:10px 12px;border-radius:10px;background:#FFF4E0;color:#6B3B00;font-size:12.5px;margin-bottom:8px}
+.kt-dup.on{display:block}
 </style>
 </head>
 <body>
@@ -3152,6 +3259,10 @@ body:has(#loginView:not(.hidden)) .bottom-nav, body:has(#loginView:not(.hidden))
       <button class="navitem" data-view="clients">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
         <span class="lbl">Klienti</span><span class="ct" id="clientCount">0</span>
+      </button>
+      <button class="navitem" data-view="contacts">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7.5 17c.7-2 2.4-3 4.5-3s3.8 1 4.5 3"/></svg></span>
+        <span class="lbl">Kontakty</span><span class="new-slot" data-new="kontakty"></span><span class="ct" data-cnt="contacts">0</span>
       </button>
       <button class="navitem" data-view="mine">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
@@ -5343,7 +5454,79 @@ const I18N_HU = {
 "Termín tendra, číslo EKR a koniec zmluvy sa zadávajú v detaile firmy v Databázach.": "A tender időpontját, az EKR-számot és a szerződés végét a cég adatlapján, az Adatbázisokban adhatod meg.",
 "Export nie je dostupný — obnov stránku a skús znova.": "Az export nem érhető el — töltsd újra az oldalt, és próbáld újra.",
 "Čo si reálne urobil. Podľa toho sa počítajú stretnutia v Reportoch.": "Mit csináltál valójában. Ez alapján számolódnak a találkozók a Riportokban.",
-"Banka": "Bank"
+"Banka": "Bank",
+"Kontakty": "Kapcsolattartók",
+"Ľudia z firiem, s ktorými pracujeme": "Az ügyfélcégek munkatársai",
+"Pri každej osobe vidíš pozíciu vo firme a kde všade sme s ňou v CRM komunikovali.": "Minden személynél látod a cégen belüli pozícióját, és azt, hol kommunikáltunk vele a CRM-ben.",
+"Nový kontakt": "Új kapcsolattartó",
+"Meno, firma, pozícia, e-mail, telefón": "Név, cég, pozíció, e-mail, telefon",
+"Všetky roly": "Minden szerep",
+"Zobraziť aj archivované": "Archiváltak is",
+"Rozhoduje": "Döntéshozó",
+"Ovplyvňuje": "Befolyásoló",
+"Používateľ": "Felhasználó",
+"Podpisuje zmluvu alebo schvaľuje rozpočet.": "Aláírja a szerződést vagy jóváhagyja a költségvetést.",
+"Pripravuje zadanie, odporúča dodávateľa.": "Előkészíti a kiírást, beszállítót javasol.",
+"Pracuje s naším výstupom každý deň.": "Naponta dolgozik a munkánk eredményével.",
+"Rola zatiaľ nie je určená.": "A szerep még nincs megadva.",
+"Už vo firme nie je": "Már nincs a cégnél",
+"Archivované aj s históriou komunikácie.": "Archiválva, a kommunikációs előzményekkel együtt.",
+"Skús iné slovo alebo zruš filter roly.": "Próbálj más szót, vagy töröld a szerep szerinti szűrést.",
+"Zatiaľ žiadne kontakty": "Még nincs kapcsolattartó",
+"Pridaj prvý tlačidlom Nový kontakt.": "Az elsőt az Új kapcsolattartó gombbal adhatod hozzá.",
+"Pozícia nezadaná": "Pozíció nincs megadva",
+"Vyber kontakt zo zoznamu": "Válassz kapcsolattartót a listából",
+"Uvidíš jeho údaje a celú históriu komunikácie v CRM.": "Itt látod az adatait és a teljes kommunikációs előzményt a CRM-ben.",
+"Hlavný kontakt firmy": "A cég fő kapcsolattartója",
+"Hlavný kontakt": "Fő kapcsolattartó",
+"Už vo firme nepracuje": "Már nem dolgozik a cégnél",
+"Komunikuje: {}": "Nyelv: {0}",
+"Doplniť údaje": "Adatok kiegészítése",
+"E-mail": "E-mail",
+"Na starosti u nás": "Nálunk felelős",
+"Posledná zmienka": "Utolsó említés",
+"Kontakt je prevzatý z Databáz. Rolu, oddelenie a ďalšie údaje doplníš tlačidlom Doplniť údaje.": "A kapcsolattartó az Adatbázisokból származik. A szerepet, a részleget és a többi adatot az Adatok kiegészítése gombbal adhatod meg.",
+"Kontakt je prevzatý zo záznamov. Rolu, oddelenie a ďalšie údaje doplníš tlačidlom Doplniť údaje.": "A kapcsolattartó a bejegyzésekből származik. A szerepet, a részleget és a többi adatot az Adatok kiegészítése gombbal adhatod meg.",
+"Firma zatiaľ nemá kartu klienta ani záznam v Databázach.": "A cégnek még nincs ügyfélkártyája, és az Adatbázisokban sem szerepel.",
+"Všetko {}": "Mind {0}",
+"Zápisy {}": "Bejegyzések {0}",
+"Úlohy {}": "Feladatok {0}",
+"Databázy {}": "Adatbázisok {0}",
+"Zmienky v texte {}": "Említések a szövegben {0}",
+"História komunikácie": "Kommunikációs előzmények",
+"S touto osobou zatiaľ nie je v CRM žiadna komunikácia. Keď ju pridáš ku kontaktom záznamu, objaví sa tu.": "Ezzel a személlyel még nincs kommunikáció a CRM-ben. Ha hozzáadod egy bejegyzés kapcsolattartóihoz, itt megjelenik.",
+"Zápis": "Bejegyzés",
+"Zmienka v texte": "Említés a szövegben",
+"Priradiť kontakt k záznamu": "Hozzárendelés a bejegyzéshez",
+"Kontakt priradený k záznamu.": "A kapcsolattartó hozzá van rendelve a bejegyzéshez.",
+"⚠ Kontakt sa nepodarilo priradiť.": "⚠ A kapcsolattartót nem sikerült hozzárendelni.",
+"„Zmienka v texte“ znamená, že osoba nie je k záznamu priradená, ale jej meno sa objavuje v texte.": "Az „Említés a szövegben” azt jelenti, hogy a személy nincs hozzárendelve a bejegyzéshez, de a neve szerepel a szövegben.",
+"Ľudia vo firme": "Emberek a cégnél",
+"Pridať osobu": "Személy hozzáadása",
+"Pri tejto firme zatiaľ nie je žiadna kontaktná osoba.": "Ennél a cégnél még nincs kapcsolattartó.",
+"Titul": "Titulus",
+"Vyber z klientov alebo z Databáz. Kontakt bez firmy sa uložiť nedá.": "Válassz az ügyfelek vagy az Adatbázisok közül. Cég nélkül a kapcsolattartó nem menthető.",
+"Pozícia vo firme": "Pozíció a cégnél",
+"Oddelenie": "Részleg",
+"Rola pri rozhodovaní": "Szerepe a döntésben",
+"Jazyk komunikácie": "Kommunikáció nyelve",
+"Maďarčina": "Magyar",
+"Slovenčina": "Szlovák",
+"Angličtina": "Angol",
+"Nemčina": "Német",
+"Iný": "Egyéb",
+"Už vo firme nepracuje (kontakt sa archivuje aj s históriou)": "Már nem dolgozik a cégnél (a kapcsolattartó az előzményekkel együtt archiválódik)",
+"Tento kontakt už existuje:": "Ez a kapcsolattartó már létezik:",
+"Uložením sa oba záznamy zlúčia do jedného.": "Mentéskor a két adatlap egybeolvad.",
+"Uložením sa existujúci kontakt doplní, nevznikne nový.": "Mentéskor a meglévő kapcsolattartó egészül ki, nem jön létre új.",
+"⚠ Vyplň firmu.": "⚠ Add meg a céget.",
+"⚠ Vyplň aspoň meno alebo kontakt.": "⚠ Adj meg legalább egy nevet vagy elérhetőséget.",
+"Kontakt uložený.": "Kapcsolattartó mentve.",
+"Kontakt sa nepodarilo uložiť.": "A kapcsolattartót nem sikerült menteni.",
+"archivovaný": "archivált",
+"poznámka k tendru": "tender megjegyzés",
+"poznámka ku klientovi": "ügyfél megjegyzés",
+"Kontakt v databáze {}": "Kapcsolattartó a(z) {0} adatbázisban",
 };
 const LANGS = { sk:"SK", hu:"HU" };
 const LANG_KEY = "drescher.lang";
@@ -6629,8 +6812,13 @@ function gsIcoVariants(v){
 let _gsIndex=null;
 function gsInvalidate(){ _gsIndex=null; }
 function gsBuildIndex(){
-  const idx={clients:[], entries:[], tasks:[], leads:[]};
+  const idx={contacts:[], clients:[], entries:[], tasks:[], leads:[]};
   if(!state.user) return (_gsIndex=idx);      // pred prihlásením nehľadáme
+
+  kontaktyVsetky().forEach(k=>{
+    idx.contacts.push({ k, hay:gsFold([ktMeno(k), k.lastName, k.firstName, k.position, k.department,
+      k.firmName, k.email, k.phone, k.note].filter(Boolean).join(" ")) });
+  });
 
   clientIndex().forEach(c=>{
     idx.clients.push({ c, hay:gsFold([c.name, ...gsIcoVariants(c.ico), (c.people||[]).join(" ")].join(" ")) });
@@ -6641,6 +6829,7 @@ function gsBuildIndex(){
     const notes=(e.comments||[]).map(x=>x.text||"").join(" ");
     idx.entries.push({ e, hay:gsFold([
       e.client, e.projekt, e.events, notes, e.material, e.nbApproachInfo, e.nbApproach, e.fromDatabase,
+      (e.contacts||[]).map(c=>[personName(c), c.lastName+" "+c.firstName, c.position, c.email].join(" ")).join(" "),
       entryOwnerNamesAll(e).join(" "), ...gsIcoVariants(e.leadIco||e.ico)
     ].filter(Boolean).join(" ")) });
   });
@@ -6655,7 +6844,9 @@ function gsBuildIndex(){
 
   (state.leads||[]).forEach(l=>{
     idx.leads.push({ l, hay:gsFold([
-      l.company, leadDbName(l), (l.shops||[]).join(" "), ...gsIcoVariants(l.ico)
+      l.company, leadDbName(l), (l.shops||[]).join(" "), ...gsIcoVariants(l.ico),
+      l.tender?.poznamka, l.tender?.ekr, l.note, l.poznamka,
+      (l.contacts||[]).map(c=>[personName(c), c.lastName+" "+c.firstName, c.position, c.email, c.phone].join(" ")).join(" ")
     ].filter(Boolean).join(" ")) });
   });
 
@@ -6702,6 +6893,16 @@ function gsSearch(q){
   const idx=gsIndex();
   const groups=[];
 
+  const kontakty=idx.contacts.filter(x=>gsMatch(x.hay,toks))
+    .sort((a,b)=>(a.k.archived-b.k.archived) || ktMeno(a.k).localeCompare(ktMeno(b.k),LOC));
+  if(kontakty.length) groups.push({ key:"contacts", label:"Kontakty", total:kontakty.length,
+    items:kontakty.slice(0,GS_LIMIT).map(({k})=>({
+      name:gsMarkName(ktMeno(k),toks),
+      sub:[esc(k.position||""), esc(k.firmName), k.archived?"archivovaný":""].filter(Boolean).join(" · "),
+      snip:(k.email||k.phone)?gsSnippet([k.email,k.phone].filter(Boolean).join(" · "),toks,90):"",
+      open:()=>{ gsClose(); otvorKontakt(k.uid); }
+    })) });
+
   const clients=idx.clients.filter(x=>gsMatch(x.hay,toks));
   if(clients.length) groups.push({ key:"clients", label:"Klienti", total:clients.length,
     items:clients.slice(0,GS_LIMIT).map(({c})=>({
@@ -6737,6 +6938,8 @@ function gsSearch(q){
   if(leads.length) groups.push({ key:"leads", label:"Databázy", total:leads.length,
     items:leads.slice(0,GS_LIMIT).map(({l})=>({
       name:gsMarkName(l.company||"—",toks),
+      snip:(()=>{ const t=[l.tender?.poznamka, (l.contacts||[]).map(c=>[personName(c),c.position].filter(Boolean).join(", ")).join(" · ")].filter(Boolean).join(" · ");
+        return t && toks.some(x=>gsFold(t).includes(x)) ? gsSnippet(t,toks,140) : ""; })(),
       sub:[l.ico?`IČO ${esc(l.ico)}`:"", leadDbName(l),
            l.segment?`priorita ${esc(l.segment)}`:""].filter(Boolean).join(" · "),
       open:()=>gsOpenLead(l)
@@ -8321,6 +8524,7 @@ const NEW_UNTIL = {
   reminders:   "2026-09-10",   // pripomienky zabudnutých príležitostí
   finstat:     "2026-09-09",   // načítanie firmy z Finstatu — 5 dní
   groupedAll:  "2026-09-11",   // zoskupený zoznam v zobrazení "Všetko" — 3 dni
+  kontakty:    "2026-11-30",   // sekcia Kontakty a hľadanie v kontaktoch
 };
 const isNewFeature = key => {
   if(!MODULES.novinky) return false;
@@ -8855,6 +9059,7 @@ function demoBackend(){
       sync();
     },
     async removeTask(id){ tasks=tasks.filter(t=>t.id!==id); sync(); },
+    async setEntryContacts(id, contacts){ all=all.map(e=>e.id===id?{...e, contacts}:e); sync(); },
     async toggleTask(id,status){ tasks=tasks.map(t=>t.id===id?{...t,status}:t); sync(); },
     async saveMeeting(m){
       if(m.id && meetings.some(x=>x.id===m.id)) meetings=meetings.map(x=>x.id===m.id?{...m}:x);
@@ -9160,6 +9365,8 @@ async function firebaseBackend(){
       await setDoc(doc(db,"tasks",id),clean,{merge:true});
     },
     removeTask(id){ return deleteDoc(doc(db,"tasks",id)); },
+    // Priradenie kontaktu k záznamu — zapisuje sa len pole contacts, nič iné sa neprepíše.
+    async setEntryContacts(id, contacts){ await setDoc(doc(db,"entries",id),{contacts, updatedAt:Date.now()},{merge:true}); },
     async toggleTask(id,status){ await setDoc(doc(db,"tasks",id),{status},{merge:true}); },
     async saveMeeting(m){
       const id=m.id||doc(collection(db,"meetings")).id;
@@ -9552,6 +9759,10 @@ function buildStatic(){
     rp.innerHTML=`<svg style="width:17px;height:17px;flex:0 0 auto;color:var(--ink-soft)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 17v-5M13 17V8M18 17v-9"/></svg><span class="ss-name">Reporty</span>`;
     rp.onclick=()=>{ closeSegSheet(); state.view="reports"; state.activeClient=null; render(); window.scrollTo(0,0); };
     segSheetList.appendChild(rp);
+    const kt=el("button","seg-sheet-row");
+    kt.innerHTML=`<svg style="width:17px;height:17px;flex:0 0 auto;color:var(--ink-soft)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7.5 17c.7-2 2.4-3 4.5-3s3.8 1 4.5 3"/></svg><span class="ss-name">Kontakty</span>`;
+    kt.onclick=()=>{ closeSegSheet(); state.view="contacts"; state.activeClient=null; render(); window.scrollTo(0,0); };
+    segSheetList.appendChild(kt);
     const send=el("button","seg-sheet-row");
     send.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;flex:0 0 auto"><path d="M12 5v14M5 12h14"/></svg><span class="ss-name">Postreh, podnet, návrh</span>`;
     send.onclick=()=>{ closeSegSheet(); $("#railFb")?.click(); };
@@ -9644,6 +9855,7 @@ function renderNow(){
   }
   counts.leads = state.leads.length ? state.leads.filter(l=>l.segment!=="E").length : "";
   counts.calculators = state.calculators.length;
+  counts.contacts = kontaktyVsetky().filter(k=>!k.archived).length;
   {
     const isAdmin=state.user.role==="admin";
     const nav=$("#navFeedback");
@@ -9740,6 +9952,7 @@ function renderNow(){
   else if(state.view==="segment") c.appendChild(viewSegment());
   else if(state.view==="feedback") c.appendChild(viewFeedback());
   else if(state.view==="reports") c.appendChild(viewReports());
+  else if(state.view==="contacts") c.appendChild(viewContacts());
   else if(state.view==="rewards") c.appendChild(viewRewards());
   else if(state.view==="results") c.appendChild(viewResults());
   else if(state.view==="internal") c.appendChild(viewInternal());
@@ -12733,6 +12946,498 @@ function posledneNbPreFirmu(name, ico){
   });
   return best;
 }
+/* ============================================================================
+   KONTAKTY
+   Kontaktné osoby boli doteraz roztrúsené: pri leadoch v Databázach a pri
+   jednotlivých záznamoch. Táto sekcia ich zobrazí na jednom mieste, zoskupené
+   podľa firmy. Nič sa nemigruje — zoznam sa skladá zo zdrojov pri zobrazení.
+   Ručne upravený alebo nový kontakt sa ukladá do profilu firmy
+   (clients/{kľúč}.kontakty), takže netreba nové pravidlá Firestore.
+   Zhoda tej istej osoby: e-mail, telefón alebo meno + priezvisko v rámci firmy.
+   ============================================================================ */
+const KT_ROLY={
+  rozhoduje: { label:"Rozhoduje",  hint:"Podpisuje zmluvu alebo schvaľuje rozpočet." },
+  ovplyvnuje:{ label:"Ovplyvňuje", hint:"Pripravuje zadanie, odporúča dodávateľa." },
+  pouzivatel:{ label:"Používateľ", hint:"Pracuje s naším výstupom každý deň." },
+  ine:       { label:"Iné",        hint:"Rola zatiaľ nie je určená." },
+};
+const KT_PORADIE=["rozhoduje","ovplyvnuje","pouzivatel","ine"];
+const KT_JAZYKY=["Maďarčina","Slovenčina","Angličtina","Nemčina","Iný"];
+const ktFold=t=>gsFold(t).replace(/\s+/g," ").trim();
+const ktMail=v=>String(v||"").split(/[,;]/)[0].trim().toLowerCase();
+const ktTel=v=>{ const d=String(v||"").split(/·|,|;/)[0].replace(/\D/g,""); return d.length>=7 ? d.slice(-9) : ""; };
+const ktMenoKluc=c=>{ const f=ktFold(c.firstName), l=ktFold(c.lastName); return (f&&l) ? [f,l].sort().join(" ") : ""; };
+function ktKluce(c){
+  const out=[]; const m=ktMail(c.email), t=ktTel(c.phone), n=ktMenoKluc(c);
+  if(m) out.push("m:"+m); if(t) out.push("t:"+t); if(n) out.push("n:"+n);
+  return out;
+}
+const ktMeno=c=>[c.title, personName(c)].filter(Boolean).join(" ").trim() || c.email || c.phone || "(bez mena)";
+const ktFirmKey=name=>klientKluc(clientKey(name||""));
+const ktRola=k=>KT_ROLY[k.role] ? k.role : "ine";
+
+/* Všetky kontakty — uložené, z databáz a zo záznamov — zlúčené do jedného zoznamu. */
+function kontaktyVsetky(){
+  const mena=new Map(); clientIndex().forEach(c=>mena.set(c.key, c.name));
+  const firmy=new Map();          // firmKey -> [kontakt]
+  const out=[];
+  const presunute=new Map();
+  Object.entries(state.clientProfiles||{}).forEach(([pk,p])=>{ if(p.kontaktyPresunute?.length) presunute.set(klientKluc(pk), new Set(p.kontaktyPresunute)); });
+  const pridaj=(fk, firmName, c, zdroj, extra)=>{
+    if(!fk || !c) return;
+    if(!c.firstName && !c.lastName && !c.email && !c.phone) return;
+    const kl=ktKluce(c);
+    // osoba presunutá do inej firmy — v pôvodnej sa z odvodených zdrojov už neukazuje
+    if(zdroj.typ!=="ulozeny" && kl.some(q=>presunute.get(fk)?.has(q))) return;
+    const zoz=firmy.get(fk)||[];
+    const ex=zoz.find(x=>kl.some(q=>x._keys.has(q)));
+    if(ex){
+      ["firstName","lastName","position","email","phone"].forEach(f=>{ if(!ex[f] && c[f]) ex[f]=c[f]; });
+      if(!ex.owner && extra?.owner) ex.owner=extra.owner;
+      kl.forEach(q=>ex._keys.add(q));
+      ex.zdroje.push(zdroj); ex.aliasy.push(c);
+      return;
+    }
+    const ulozeny=zdroj.typ==="ulozeny";
+    const k={
+      firstName:"", lastName:"", title:"", position:"", department:"", email:"", phone:"",
+      role:"", owner:"", lang:"", note:"", primary:false, archived:false, ...c,
+      uid: ulozeny ? c.id : "d:"+fk+":"+(kl[0]||Math.random().toString(36).slice(2)),
+      ulozeny, firmKey:fk, firmName: mena.get(fk) || c.firmName || firmName || fk,
+      zdroje:[zdroj], aliasy:[c], _keys:new Set([...kl, ...(c.kluce||[])]),
+    };
+    if(!k.owner && extra?.owner) k.owner=extra.owner;
+    zoz.push(k); firmy.set(fk, zoz); out.push(k);
+  };
+  Object.entries(state.clientProfiles||{}).forEach(([pk,p])=>{
+    (p.kontakty||[]).forEach(c=>pridaj(klientKluc(pk), p.name, {...c, _profil:pk}, {typ:"ulozeny"}));
+  });
+  (state.leads||[]).forEach(l=>{
+    (l.contacts||[]).forEach(c=>pridaj(ktFirmKey(l.company), l.company, c, {typ:"lead", id:l.id}, {owner:l.ownerName}));
+  });
+  [...state.all].sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0)).forEach(e=>{
+    if(!e.client) return;
+    // kontakt priradený zo sekcie Kontakty si pamätá svoju firmu — záznam môže byť o inej
+    (e.contacts||[]).forEach(c=>pridaj(c.kontaktFirma||ktFirmKey(e.client), c.firmName||e.client, c, {typ:"zaznam", id:e.id}, {owner:resolveOwnerName(e)}));
+  });
+  return out;
+}
+const kontaktPodlaUid=uid=>kontaktyVsetky().find(k=>k.uid===uid) || null;
+
+/* Kde všade sa s kontaktom komunikovalo: priradený k záznamu, v databáze,
+   v úlohe, a navyše miesta, kde je len spomenutý v texte. */
+function kontaktHistoria(k){
+  const varianty=new Set(), tok=new Set();
+  k.aliasy.concat([k]).forEach(a=>{
+    const f=ktFold(a.firstName), l=ktFold(a.lastName);
+    if(f&&l){ varianty.add(f+" "+l); varianty.add(l+" "+f); tok.add(f); tok.add(l); }
+  });
+  const toks=[...tok];
+  const snip=(t,n)=> toks.length ? gsSnippet(t,toks,n||180) : esc(String(t||"").replace(/\s+/g," ").slice(0,n||180));
+  const spomenuty=t=>{ if(!varianty.size || !t) return false; const x=ktFold(t); return [...varianty].some(v=>x.includes(v)); };
+  const priradeny=c=>ktKluce(c).some(q=>k._keys.has(q));
+  const items=[];
+  const tydenTs=w=>{ try{ const {year,week}=parseWeekId(w); return mondayOf(year,week).getTime(); }catch(e){ return 0; } };
+
+  state.all.forEach(e=>{
+    const pri=(e.contacts||[]).some(priradeny);
+    const text=[e.events, ...(e.comments||[]).map(x=>x.text), e.nbApproachInfo, e.projekt].filter(Boolean).join(" · ");
+    const zm=!pri && spomenuty(text);
+    if(!pri && !zm) return;
+    items.push({ typ: zm?"zmienka":"zaznam", kedy:tydenTs(e.weekId)||e.updatedAt||0,
+      datum: weekRangeLabel(e.weekId),
+      nazov: [entryTitle(e)||e.client, e.dmisActType].filter(Boolean).join(" · "),
+      text: snip(text),
+      meta: [resolveOwnerName(e), SEG[e.segment]?.short].filter(Boolean).join(" · "),
+      otvor:()=>gsOpenEntry(e), zaznam:e });
+  });
+
+  const ulohy = jeVedenie() ? state.tasks
+    : state.tasks.filter(t=>isMyTask(t)||t.createdBy===state.user.name||!t.assignee);
+  ulohy.forEach(t=>{
+    const text=[t.title,t.note].filter(Boolean).join(" · ");
+    if(!spomenuty(text)) return;
+    items.push({ typ:"uloha", kedy: t.due ? Date.parse(t.due) : (t.createdAt||0),
+      datum: t.due ? fmtDay(t.due) : "bez termínu", nazov: t.title||"Úloha",
+      text: t.note ? snip(t.note) : "",
+      meta: [t.client, t.assignee||"nepriradené", t.status==="done"?"dokončená":"otvorená"].filter(Boolean).join(" · "),
+      otvor:()=>gsOpenTask(t) });
+  });
+
+  (state.leads||[]).forEach(l=>{
+    const c=(l.contacts||[]).find(priradeny);
+    if(c) items.push({ typ:"databaza", kedy:c.addedAt||l.lastTouchAt||0,
+      datum: (c.addedAt||l.lastTouchAt) ? fmtD(c.addedAt||l.lastTouchAt) : "—",
+      nazov: `Kontakt v databáze ${leadDbName(l)}`,
+      text: c.callStatus ? esc(c.callStatus) : "",
+      meta: [l.company, l.ownerName].filter(Boolean).join(" · "),
+      otvor:()=>gsOpenLead(l) });
+    const tp=[l.tender?.poznamka, l.note, l.poznamka].filter(Boolean).join(" · ");
+    if(spomenuty(tp)) items.push({ typ:"zmienka", kedy:l.lastTouchAt||0,
+      datum: l.tender?.termin ? fmtDay(l.tender.termin) : (l.lastTouchAt?fmtD(l.lastTouchAt):"—"),
+      nazov: `${l.company||"Databáza"} · poznámka k tendru`,
+      text: snip(tp), meta: leadDbName(l),
+      otvor:()=>gsOpenLead(l) });
+  });
+
+  Object.entries(state.clientProfiles||{}).forEach(([pk,p])=>{
+    if(!spomenuty(p.poznamka)) return;
+    items.push({ typ:"zmienka", kedy:p.updatedAt||0, datum: p.updatedAt?fmtD(p.updatedAt):"—",
+      nazov: `${p.name||pk} · poznámka ku klientovi`, text: snip(p.poznamka), meta:p.updatedBy||"",
+      otvor:()=>{ state.view="clients"; goClient(klientKluc(pk)); } });
+  });
+  return items.sort((a,b)=>(b.kedy||0)-(a.kedy||0));
+}
+
+const KT_TYPY={
+  zaznam:  { label:"Zápis",           cls:"z" },
+  uloha:   { label:"Úloha",           cls:"u" },
+  databaza:{ label:"Databáza",        cls:"d" },
+  zmienka: { label:"Zmienka v texte", cls:"m" },
+};
+
+function otvorKontakt(uid){
+  if(!state.kt) state.kt={q:"", rola:"", arch:false, sel:null, tab:"vsetko"};
+  state.kt.sel=uid; state.kt.tab="vsetko"; state.kt.skok=true;
+  state.activeClient=null; state.view="contacts";
+  render(); window.scrollTo(0,0);
+}
+
+function viewContacts(){
+  if(!state.kt) state.kt={q:"", rola:"", arch:false, sel:null, tab:"vsetko"};
+  const s=state.kt;
+  try{ backend.ensureLeads?.(); }catch(err){}
+  const wrap=el("div","kt");
+  const head=el("div","page-h",`<div>
+    <div class="eyebrow">Ľudia z firiem, s ktorými pracujeme</div>
+    <h1>Kontakty</h1>
+    <div class="sub">Pri každej osobe vidíš pozíciu vo firme a kde všade sme s ňou v CRM komunikovali.</div></div><div></div>`);
+  const nb=el("button","btn solid","Nový kontakt"); nb.type="button";
+  nb.onclick=()=>openKontaktModal(null);
+  head.lastElementChild.appendChild(nb);
+  wrap.appendChild(head);
+
+  const vsetky=kontaktyVsetky();
+  const bar=el("div","kt-bar");
+  bar.innerHTML=`<div class="kt-q"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="ktQ" placeholder="Meno, firma, pozícia, e-mail, telefón" autocomplete="off"></div>
+    <select id="ktRola" aria-label="Rola"><option value="">Všetky roly</option>${
+      KT_PORADIE.map(r=>`<option value="${r}">${esc(KT_ROLY[r].label)}</option>`).join("")}</select>
+    <label class="kt-sw"><input type="checkbox" id="ktArch">Zobraziť aj archivované</label>`;
+  bar.querySelector("#ktQ").value=s.q;
+  bar.querySelector("#ktRola").value=s.rola;
+  bar.querySelector("#ktArch").checked=s.arch;
+  wrap.appendChild(bar);
+
+  const grid=el("div","kt-grid");
+  const listBox=el("section","kt-list"); listBox.setAttribute("aria-label","Zoznam kontaktov");
+  const detBox=el("div","kt-det");
+  grid.appendChild(listBox); grid.appendChild(detBox);
+  wrap.appendChild(grid);
+
+  function filtrovane(){
+    const toks=gsTokens(s.q);
+    return vsetky.filter(k=>{
+      if(!s.arch && k.archived) return false;
+      if(s.rola && ktRola(k)!==s.rola) return false;
+      if(!toks.length) return true;
+      const hay=gsFold([ktMeno(k), k.lastName+" "+k.firstName, k.position, k.department, k.firmName, k.email, k.phone, k.note].join(" "));
+      return gsMatch(hay, toks);
+    });
+  }
+  function paintList(){
+    const rows=filtrovane();
+    listBox.innerHTML="";
+    if(!rows.length){
+      listBox.appendChild(el("div","kt-empty", vsetky.length
+        ? "<b>Nič sa nenašlo</b>Skús iné slovo alebo zruš filter roly."
+        : "<b>Zatiaľ žiadne kontakty</b>Pridaj prvý tlačidlom Nový kontakt."));
+      return;
+    }
+    const podlaFirmy=new Map();
+    rows.forEach(k=>{ if(!podlaFirmy.has(k.firmKey)) podlaFirmy.set(k.firmKey,[]); podlaFirmy.get(k.firmKey).push(k); });
+    [...podlaFirmy.values()].sort((a,b)=>a[0].firmName.localeCompare(b[0].firmName,LOC)).forEach(zoz=>{
+      const g=el("div","kt-firm");
+      const fh=el("div","kt-firm-h"); fh.setAttribute("data-notr","");
+      fh.innerHTML=`<b>${esc(zoz[0].firmName)}</b><span>${zoz.length}</span>`;
+      g.appendChild(fh);
+      zoz.sort((a,b)=>(a.archived-b.archived) || (b.primary-a.primary)
+          || KT_PORADIE.indexOf(ktRola(a))-KT_PORADIE.indexOf(ktRola(b))
+          || ktMeno(a).localeCompare(ktMeno(b),LOC))
+        .forEach(k=>{
+          const b=el("button","kt-row"+(s.sel===k.uid?" on":"")+(k.archived?" arch":"")); b.type="button";
+          b.innerHTML=`<span class="kt-av">${esc(initials(personName(k)||k.email||"?"))}</span>
+            <span class="kt-rn"><b data-notr>${esc(ktMeno(k))}</b><span data-notr>${esc(k.position||"Pozícia nezadaná")}</span></span>
+            <span class="kt-rr">${k.role?esc(KT_ROLY[ktRola(k)].label):""}</span>`;
+          b.onclick=()=>{ s.sel=k.uid; s.tab="vsetko"; paintList(); paintDet();
+            if(window.innerWidth<1000) detBox.scrollIntoView({behavior:"smooth", block:"start"}); };
+          g.appendChild(b);
+        });
+      listBox.appendChild(g);
+    });
+    const foot=el("div","kt-foot"); foot.setAttribute("data-notr","");
+    foot.textContent = LANG==="hu"
+      ? `${rows.length} kapcsolattartó · ${podlaFirmy.size} cég`
+      : `${rows.length} ${plural(rows.length,"kontakt","kontakty","kontaktov")} v ${podlaFirmy.size} ${podlaFirmy.size===1?"firme":"firmách"}`;
+    listBox.appendChild(foot);
+  }
+  function paintDet(){
+    detBox.innerHTML="";
+    const k=vsetky.find(x=>x.uid===s.sel);
+    if(!k){
+      detBox.appendChild(el("div","kt-empty","<b>Vyber kontakt zo zoznamu</b>Uvidíš jeho údaje a celú históriu komunikácie v CRM."));
+      return;
+    }
+    const hist=kontaktHistoria(k);
+    const card=el("article","kt-card");
+    const rola=ktRola(k);
+    card.innerHTML=`<div class="kt-top">
+        <span class="kt-av big">${esc(initials(personName(k)||k.email||"?"))}</span>
+        <div class="kt-id">
+          <h2 data-notr>${esc(ktMeno(k))}</h2>
+          <p><span data-notr>${esc(k.position||"Pozícia nezadaná")}</span>${k.department?` · <span data-notr>${esc(k.department)}</span>`:""} · <button type="button" class="kt-firm-link" data-notr>${esc(k.firmName)}</button></p>
+          <div class="kt-chips">${k.role?`<span class="kt-chip dark">${esc(KT_ROLY[rola].label)}</span>`:""}${
+            k.primary?`<span class="kt-chip">Hlavný kontakt firmy</span>`:""}${
+            k.archived?`<span class="kt-chip warn">Už vo firme nepracuje</span>`:""}${
+            k.lang?`<span class="kt-chip">Komunikuje: ${esc(k.lang)}</span>`:""}</div>
+        </div>
+        <button type="button" class="btn kt-edit">${k.ulozeny?"Upraviť":"Doplniť údaje"}</button>
+      </div>
+      <dl class="kt-dl">
+        <div><dt>E-mail</dt><dd>${k.email?`<a href="mailto:${esc(ktMail(k.email))}" data-notr>${esc(k.email)}</a>`:"—"}</dd></div>
+        <div><dt>Telefón</dt><dd>${k.phone?`<a href="tel:${esc(String(k.phone).replace(/\s/g,""))}" data-notr>${esc(k.phone)}</a>`:"—"}</dd></div>
+        <div><dt>Na starosti u nás</dt><dd data-notr>${esc(k.owner||"—")}</dd></div>
+        <div><dt>Posledná zmienka</dt><dd>${hist.length?esc(hist[0].datum):"—"}</dd></div>
+      </dl>
+      ${k.note?`<p class="kt-note" data-notr>${esc(k.note)}</p>`:""}
+      ${k.ulozeny?"":`<p class="kt-src">Kontakt je prevzatý ${k.zdroje.some(z=>z.typ==="lead")?"z Databáz":"zo záznamov"}. Rolu, oddelenie a ďalšie údaje doplníš tlačidlom Doplniť údaje.</p>`}`;
+    card.querySelector(".kt-edit").onclick=()=>openKontaktModal(k);
+    card.querySelector(".kt-firm-link").onclick=()=>{
+      const c=clientIndex().find(x=>x.key===k.firmKey);
+      if(c){ state.view="clients"; goClient(c.key); return; }
+      const l=(state.leads||[]).find(x=>ktFirmKey(x.company)===k.firmKey);
+      if(l) gsOpenLead(l); else toast("Firma zatiaľ nemá kartu klienta ani záznam v Databázach.");
+    };
+    detBox.appendChild(card);
+
+    const hs=el("section","kt-hist");
+    const pocty={vsetko:hist.length}; Object.keys(KT_TYPY).forEach(t=>pocty[t]=hist.filter(h=>h.typ===t).length);
+    const tabs=el("div","rp-tabs");
+    [["vsetko","Všetko"],["zaznam","Zápisy"],["uloha","Úlohy"],["databaza","Databázy"],["zmienka","Zmienky v texte"]].forEach(([id,t])=>{
+      if(id!=="vsetko" && !pocty[id]) return;
+      const b=el("button","rp-tab"+(s.tab===id?" on":""),`${t} ${pocty[id]}`); b.type="button";
+      b.onclick=()=>{ s.tab=id; paintDet(); };
+      tabs.appendChild(b);
+    });
+    const hh=el("div","kt-hist-h"); hh.appendChild(el("h2","","História komunikácie")); hh.appendChild(tabs);
+    hs.appendChild(hh);
+    const vid=hist.filter(h=>s.tab==="vsetko"||h.typ===s.tab);
+    if(!vid.length){
+      hs.appendChild(el("div","kt-hint","S touto osobou zatiaľ nie je v CRM žiadna komunikácia. Keď ju pridáš ku kontaktom záznamu, objaví sa tu."));
+    }
+    const ol=el("ol","kt-tl");
+    vid.forEach(h=>{
+      const li=el("li","kt-ti t-"+KT_TYPY[h.typ].cls);
+      li.innerHTML=`<span class="kt-td">${esc(h.datum)}</span><span class="kt-tdot"></span>
+        <div class="kt-tc"><button type="button" class="kt-topen">
+          <span class="kt-tk">${esc(KT_TYPY[h.typ].label)}</span><b>${esc(h.nazov)}</b></button>
+          ${h.text?`<span class="kt-tt" data-notr>${h.text}</span>`:""}
+          <span class="kt-tm"><span>${esc(h.meta||"")}</span></span></div>`;
+      li.querySelector(".kt-topen").onclick=h.otvor;
+      if(h.typ==="zmienka" && h.zaznam){
+        const pb=el("button","kt-assign","Priradiť kontakt k záznamu"); pb.type="button";
+        pb.onclick=async()=>{
+          const e=h.zaznam;
+          const novy={ id:"c_"+Math.random().toString(36).slice(2,9), firstName:k.firstName||"", lastName:k.lastName||"",
+            position:k.position||"", phone:k.phone||"", email:k.email||"", source:"kontakty",
+            kontaktFirma:k.firmKey, firmName:k.firmName,
+            addedAt:Date.now(), addedByName:state.user.name };
+          pb.disabled=true;
+          try{ await backend.setEntryContacts(e.id, [...(e.contacts||[]), novy]); toast("Kontakt priradený k záznamu."); }
+          catch(err){ console.error(err); toast("⚠ Kontakt sa nepodarilo priradiť."); pb.disabled=false; }
+        };
+        li.querySelector(".kt-tm").appendChild(pb);
+      }
+      ol.appendChild(li);
+    });
+    hs.appendChild(ol);
+    if(pocty.zmienka) hs.appendChild(el("p","kt-hint","„Zmienka v texte“ znamená, že osoba nie je k záznamu priradená, ale jej meno sa objavuje v texte."));
+    detBox.appendChild(hs);
+  }
+  const q=bar.querySelector("#ktQ");
+  let tmr=null;
+  q.oninput=()=>{ s.q=q.value; clearTimeout(tmr); tmr=setTimeout(paintList,150); };
+  bar.querySelector("#ktRola").onchange=ev=>{ s.rola=ev.target.value; paintList(); };
+  bar.querySelector("#ktArch").onchange=ev=>{ s.arch=ev.target.checked; paintList(); };
+  paintList(); paintDet();
+  if(s.skok){ s.skok=false; if(window.innerWidth<1000) setTimeout(()=>detBox.scrollIntoView({block:"start"}),60); }
+  return wrap;
+}
+
+/* Blok „Ľudia vo firme“ na karte klienta — kontakty rozdelené podľa roly. */
+function ludiaVoFirme(c){
+  const box=el("div","kt-firm-box");
+  const kont=kontaktyVsetky().filter(k=>k.firmKey===c.key);
+  const h=el("div","section-title",`Ľudia vo firme <span class="pip">${kont.filter(k=>!k.archived).length}</span>`);
+  const add=el("button","btn kt-add","Pridať osobu"); add.type="button";
+  add.onclick=()=>openKontaktModal(null,{firmName:c.name});
+  h.appendChild(add);
+  box.appendChild(h);
+  if(!kont.length){
+    box.appendChild(el("div","kt-hint","Pri tejto firme zatiaľ nie je žiadna kontaktná osoba."));
+    return box;
+  }
+  const lanes=el("div","kt-lanes");
+  const skupiny=[...KT_PORADIE.map(r=>({id:r, label:KT_ROLY[r].label, hint:KT_ROLY[r].hint, ludia:kont.filter(k=>!k.archived && ktRola(k)===r)})),
+    {id:"arch", label:"Už vo firme nie je", hint:"Archivované aj s históriou komunikácie.", ludia:kont.filter(k=>k.archived)}];
+  skupiny.filter(g=>g.ludia.length).forEach(g=>{
+    const ln=el("section","kt-lane l-"+g.id);
+    ln.innerHTML=`<div class="kt-lane-h"><b>${esc(g.label)}</b><span>${g.ludia.length}</span></div><p>${esc(g.hint)}</p>`;
+    g.ludia.sort((a,b)=>(b.primary-a.primary)||ktMeno(a).localeCompare(ktMeno(b),LOC)).forEach(k=>{
+      const b=el("button","kt-pc"); b.type="button";
+      b.innerHTML=`<span class="kt-pc-top"><span class="kt-av">${esc(initials(personName(k)||k.email||"?"))}</span>
+        <span class="kt-rn"><b data-notr>${esc(ktMeno(k))}</b><span data-notr>${esc(k.position||"Pozícia nezadaná")}</span></span></span>
+        ${k.email||k.phone?`<span class="kt-pc-c" data-notr>${esc(k.email||k.phone)}</span>`:""}
+        ${k.primary?`<span class="kt-pc-tag">Hlavný kontakt</span>`:""}`;
+      b.onclick=()=>otvorKontakt(k.uid);
+      ln.appendChild(b);
+    });
+    lanes.appendChild(ln);
+  });
+  box.appendChild(lanes);
+  return box;
+}
+
+/* Nový kontakt / úprava. Prevzatý kontakt sa uložením stane uloženým
+   a zapamätá si svoje pôvodné kľúče, aby sa v zozname nezdvojil. */
+function openKontaktModal(k, pred){
+  const v=k || {firstName:"", lastName:"", title:"", position:"", department:"", role:"", email:"", phone:"+36 ",
+    owner:"", lang:"", note:"", primary:false, archived:false, firmName:pred?.firmName||""};
+  const firmyMena=[...new Set([...clientIndex().map(c=>c.name), ...(state.leads||[]).map(l=>l.company)].filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,LOC));
+  const scrim=el("div","scrim open"); scrim.style.zIndex="90";
+  scrim.innerHTML=`<div class="modal kt-modal" style="max-width:600px">
+    <div class="modal-h"><h2>${k?"Upraviť kontakt":"Nový kontakt"}</h2>
+      <button class="ghost" data-act="cancel" aria-label="Zavrieť"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-b">
+      <div class="kt-f3">
+        <div class="field"><label for="kmTit">Titul</label><input id="kmTit"></div>
+        <div class="field"><label for="kmLast">Priezvisko</label><input id="kmLast"></div>
+        <div class="field"><label for="kmFirst">Meno</label><input id="kmFirst"></div>
+      </div>
+      <div class="field"><label for="kmFirm">Firma</label><input id="kmFirm" list="kmFirmList" autocomplete="off">
+        <datalist id="kmFirmList">${firmyMena.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
+        <div class="hint">Vyber z klientov alebo z Databáz. Kontakt bez firmy sa uložiť nedá.</div></div>
+      <div class="kt-f2">
+        <div class="field"><label for="kmPos">Pozícia vo firme</label><input id="kmPos" placeholder="Pozícia (napr. konateľ, nákupca)"></div>
+        <div class="field"><label for="kmDep">Oddelenie</label><input id="kmDep"></div>
+      </div>
+      <fieldset class="kt-roles"><legend>Rola pri rozhodovaní</legend>${
+        KT_PORADIE.map(r=>`<label><input type="radio" name="kmRole" value="${r}">${esc(KT_ROLY[r].label)}</label>`).join("")}</fieldset>
+      <div class="kt-f2">
+        <div class="field"><label for="kmMail">E-mail</label><input id="kmMail" type="email"></div>
+        <div class="field"><label for="kmTel">Telefón</label><input id="kmTel" type="tel"></div>
+      </div>
+      <div class="kt-f2">
+        <div class="field"><label for="kmOwn">Na starosti u nás</label><select id="kmOwn"><option value="">— nezvolený —</option>${
+          [...new Set([...OBCH_NAME_LIST, v.owner].filter(Boolean))].map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("")}</select></div>
+        <div class="field"><label for="kmLang">Jazyk komunikácie</label><select id="kmLang"><option value="">—</option>${
+          KT_JAZYKY.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("")}</select></div>
+      </div>
+      <div class="field"><label for="kmNote">Poznámka</label><textarea id="kmNote" rows="2" style="min-height:64px"></textarea></div>
+      <div class="kt-checks">
+        <label class="chk-row"><input type="checkbox" id="kmPrim"><span>Hlavný kontakt firmy</span></label>
+        <label class="chk-row"><input type="checkbox" id="kmArch"><span>Už vo firme nepracuje (kontakt sa archivuje aj s históriou)</span></label>
+      </div>
+      <div class="kt-dup" id="kmDup"></div>
+      <div class="task-err" id="kmErr"></div>
+    </div>
+    <div class="modal-f" style="justify-content:flex-end">
+      <button class="btn" data-act="cancel">Zrušiť</button>
+      <button class="btn solid" data-act="save">Uložiť kontakt</button>
+    </div></div>`;
+  const $m=id=>scrim.querySelector("#"+id);
+  $m("kmTit").value=v.title||""; $m("kmLast").value=v.lastName||""; $m("kmFirst").value=v.firstName||"";
+  $m("kmFirm").value=v.firmName||""; $m("kmPos").value=v.position||""; $m("kmDep").value=v.department||"";
+  $m("kmMail").value=v.email||""; $m("kmTel").value=v.phone||""; $m("kmOwn").value=v.owner||"";
+  $m("kmLang").value=v.lang||""; $m("kmNote").value=v.note||"";
+  $m("kmPrim").checked=!!v.primary; $m("kmArch").checked=!!v.archived;
+  { const r=scrim.querySelector(`input[name="kmRole"][value="${v.role||"ine"}"]`); if(r) r.checked=true; }
+  const close=()=>scrim.remove();
+  scrim.querySelectorAll('[data-act="cancel"]').forEach(b=>b.onclick=close);
+  scrim.onclick=ev=>{ if(ev.target===scrim) close(); };
+
+  const udaje=()=>({
+    title:$m("kmTit").value.trim(), lastName:$m("kmLast").value.trim(), firstName:$m("kmFirst").value.trim(),
+    firmName:$m("kmFirm").value.trim(), position:$m("kmPos").value.trim(), department:$m("kmDep").value.trim(),
+    role:(scrim.querySelector('input[name="kmRole"]:checked')||{}).value||"ine",
+    email:$m("kmMail").value.trim(), phone:cisteCislo($m("kmTel").value),
+    owner:$m("kmOwn").value||"", lang:$m("kmLang").value||"", note:$m("kmNote").value.trim(),
+    primary:$m("kmPrim").checked, archived:$m("kmArch").checked,
+  });
+  // existujúci kontakt tej istej osoby vo firme — uloženie ho len doplní
+  let cielovy=k;
+  const kontrolaDuplicity=()=>{
+    const d=udaje(); const fk=ktFirmKey(d.firmName); const kl=ktKluce(d);
+    const box=$m("kmDup");
+    const zhoda=(fk && kl.length) ? kontaktyVsetky().find(x=>x.firmKey===fk && x.uid!==k?.uid && kl.some(q=>x._keys.has(q))) : null;
+    if(!k) cielovy=zhoda||null;
+    if(zhoda){
+      box.innerHTML=`<span>Tento kontakt už existuje:</span> <b data-notr>${esc(ktMeno(zhoda))}</b> (<span data-notr>${esc(zhoda.firmName)}</span>). <span>${k?"Uložením sa oba záznamy zlúčia do jedného.":"Uložením sa existujúci kontakt doplní, nevznikne nový."}</span>`;
+      box.classList.add("on");
+    } else { box.innerHTML=""; box.classList.remove("on"); }
+  };
+  ["kmLast","kmFirst","kmFirm","kmMail","kmTel"].forEach(id=>$m(id).addEventListener("change",kontrolaDuplicity));
+  kontrolaDuplicity();
+
+  scrim.querySelector('[data-act="save"]').onclick=async ev=>{
+    const btn=ev.currentTarget, err=$m("kmErr");
+    const d=udaje();
+    if(!d.firmName){ err.textContent="⚠ Vyplň firmu."; err.classList.add("on"); return; }
+    if(!d.firstName && !d.lastName && !d.email && !d.phone){ err.textContent="⚠ Vyplň aspoň meno alebo kontakt."; err.classList.add("on"); return; }
+    btn.disabled=true; btn.textContent="Ukladám…";
+    try{
+      const id=await ulozKontakt(cielovy, d);
+      toast("Kontakt uložený.");
+      close();
+      if(state.view==="contacts"){ if(!state.kt) state.kt={q:"",rola:"",arch:false,sel:null,tab:"vsetko"}; state.kt.sel=id; render(); }
+    }catch(e2){
+      console.error("ulozKontakt:", e2);
+      err.textContent="⚠ "+(e2?.message||e2?.code||"Kontakt sa nepodarilo uložiť."); err.classList.add("on");
+      btn.disabled=false; btn.textContent="Uložiť kontakt";
+    }
+  };
+  document.body.appendChild(scrim);
+  setTimeout(()=>$m(k?"kmPos":"kmLast").focus(),40);
+}
+
+async function ulozKontakt(k, d){
+  const fk=ktFirmKey(d.firmName);
+  const now=Date.now();
+  const id = k?.ulozeny ? k.uid : "k_"+Math.random().toString(36).slice(2,10);
+  const kluce=[...new Set([...(k?._keys||[]), ...ktKluce(d)])];
+  const zaznam={ id, ...d, kluce,
+    archivedAt: d.archived ? (k?.archivedAt||now) : null,
+    createdAt: k?.createdAt||now, createdBy: k?.createdBy||state.user.name,
+    updatedAt: now, updatedBy: state.user.name };
+  Object.keys(zaznam).forEach(x=>{ if(zaznam[x]===undefined) zaznam[x]=null; });
+  const profil=key=>(state.clientProfiles||{})[key]?.kontakty || [];
+  // kontakt sa presunul do inej firmy — z pôvodnej ho odstránime
+  const staryProfil = k ? (k.ulozeny ? (k._profil || k.firmKey) : k.firmKey) : null;
+  if(staryProfil && klientKluc(staryProfil)!==fk){
+    const p0=(state.clientProfiles||{})[staryProfil]||{};
+    await backend.saveClientProfile(staryProfil, {
+      kontakty: profil(staryProfil).filter(x=>x.id!==id),
+      kontaktyPresunute: [...new Set([...(p0.kontaktyPresunute||[]), ...(k._keys||[])])] });
+  }
+  let zoz=profil(fk).filter(x=>x.id!==id).map(x=>{ const y={...x}; delete y._profil; return y; });
+  if(d.primary) zoz=zoz.map(x=>x.primary?{...x, primary:false}:x);
+  zoz.push(zaznam);
+  await backend.saveClientProfile(fk, { kontakty: zoz });
+  gsInvalidate();
+  return id;
+}
+
 function viewReports(){
   if(!state.rep) state.rep={tab:"stretnutia", preset:"rok", od:"", do:"", obch:"", tVsetky:true};
   const r=state.rep, o=obdobieReportu();
@@ -13997,6 +14702,7 @@ function viewClientDetail(){
     };
     wrap.appendChild(row);
   }
+  wrap.appendChild(ludiaVoFirme(c));
 
   /* Obchodné prípady klienta — odtiaľto sa dá rovno doplniť mesačná
      fakturácia. Doteraz sa k nej dalo dostať len cez kartu záznamu alebo
